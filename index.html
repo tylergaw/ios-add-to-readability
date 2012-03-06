@@ -33,6 +33,11 @@
                 var p = document.createElement('p');
                 p.appendChild(document.createTextNode('You are not able to open links with the reeder:// protocol'));
                 body.appendChild(p);
+
+                var a = document.createElement('a');
+                a.setAttribute('href', 'reeder://?url=http://foo.com');
+                a.appendChild(document.createTextNode('open reeder'));
+                body.appendChild(a);
             }
             
         }());
