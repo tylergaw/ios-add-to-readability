@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Trying to detect native apps from a browser</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        
+    </head>
+    <body>
+
+        <script>
+        (function () {
+            var body = document.getElementsByTagName('body')[0],
+                req = new XMLHttpRequest;
+
+            req.open('GET', 'reeder://', false);
+
+            try {
+                req.send(null);
+
+                req.onreadystatechange = function (e) {
+                    if (req.readyState === 4) {
+                        if (req.status === 200) {
+                            var a = document.createElement('a');
+                            a.setAttribute('href', 'reeder://?url=http://foo.com');
+                            a.appendChild(document.createTextNode('open reeder'));
+                            body.appendChild(a);
+                        }
+                    }
+                };
+            } catch (e) {
+                var p = document.createElement('p');
+                p.appendChild(document.createTextNode('You are not able to open links with the reeder:// protocol'));
+                body.appendChild(p);
+            }
+            
+        }());
+        </script>
+    </body>
+</html>
