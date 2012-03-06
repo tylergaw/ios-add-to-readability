@@ -8,13 +8,9 @@
     </head>
     <body>
         <textarea id="bookmarklet" rows="6" cols="70"></textarea>
-        <a id="bookmarklet-link" href="">Drag this to bookmarks bar</a>
         <script>
-        //var marklet = 'javascript:' + encodeURIComponent('(function () {window.location = "readability://read?url=" + encodeURIComponent(window.location.href);}());');
-        var marklet = 'javascript:' + encodeURIComponent('(function () {window.location = "twitter://post?message=" + encodeURIComponent(window.location.href);}());');
-
+        var marklet = 'javascript:' + encodeURIComponent('(function () {window.location = "readability://read?url=" + encodeURIComponent(window.location.href);}());');
         document.getElementById('bookmarklet').value = marklet;
-        document.getElementById('bookmarklet-link').href = marklet;
         </script>
     </body>
 </html>
