@@ -22,10 +22,10 @@
         <a id="test">Add http://www.alistapart.com/articles/the-web-aesthetic to Readability</a>
 
         <script>
-        var marklet = 'javascript:' + encodeURIComponent('(function () {window.location = "readability://add/" + encodeURIComponent(window.location.href);}());');
+        var marklet = 'javascript:' + encodeURIComponent('(function () {window.location = "readability://add/" + window.location.href;}());');
         document.getElementById('bookmarklet').value = marklet;
 
-        var testURL = 'javascript:' + encodeURIComponent('(function () {window.location = "readability://add/" + encodeURIComponent(http://www.alistapart.com/articles/the-web-aesthetic);}());');
+        var testURL = 'javascript:' + encodeURIComponent('(function () {window.location = "readability://add/http://www.alistapart.com/articles/the-web-aesthetic";}());');
         document.getElementById('test').href = testURL;
         </script>
     </body>
