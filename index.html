@@ -7,16 +7,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+        <p>
+            Do that thing where you create a bookmark of this page and then edit
+            its URL to be the contents of the textarea. Then hit an article and
+            hit the bookmark. It should send the current page to readability.
+        </p>
         <textarea id="bookmarklet" rows="6" cols="70"></textarea>
 
         <br>
         <br>
-        <a id="test">Test it</a>
+        <p>
+            Or a hard-coded test.
+        </p>
+        <a id="test">Add http://www.alistapart.com/articles/the-web-aesthetic to Readability</a>
 
         <script>
         var marklet = 'javascript:' + encodeURIComponent('(function () {window.location = "readability://add/" + encodeURIComponent(window.location.href);}());');
         document.getElementById('bookmarklet').value = marklet;
-        document.getElementById('test').href = marklet;
+
+        var testURL = 'javascript:' + encodeURIComponent('(function () {window.location = "readability://add/" + encodeURIComponent(http://www.alistapart.com/articles/the-web-aesthetic);}());');
+        document.getElementById('test').href = testURL;
         </script>
     </body>
 </html>
